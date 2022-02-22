@@ -81,7 +81,9 @@ public class Main {
                 document.append(columnName, rs.getNString(columnIndex));
               } else if (columnType == Types.FLOAT) {
                 document.append(columnName, rs.getFloat(columnIndex));
-              } else {
+              } else if (columnType == Types.DATE) {
+                document.append(columnName, rs.getDate(columnIndex));
+              }  else {
                 String message = String.format("Does not handle type %d", columnType);
                 System.out.println(message);
               }

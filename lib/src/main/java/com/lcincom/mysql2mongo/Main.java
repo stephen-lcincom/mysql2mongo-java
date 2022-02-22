@@ -30,6 +30,7 @@ public class Main {
     String table = dotenv.get("TABLE");
     String tableId = dotenv.get("TABLE_ID");
     String tableIdType = dotenv.get("TABLE_ID_TYPE");
+    int interval = Integer.parseInt(dotenv.get("INTERVAL"));
     int queryLimit = Integer.parseInt(dotenv.get("QUERY_LIMIT"));
     String mongoDb = dotenv.get("MONGO_DB");
 
@@ -105,7 +106,7 @@ public class Main {
 
         System.out.println(String.format("%d records has been updated.", count));
 
-        Thread.sleep(5000);
+        Thread.sleep(interval);
       }
     } finally {
       if (rs != null) {

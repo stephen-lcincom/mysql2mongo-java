@@ -143,7 +143,7 @@ public class Main {
 
       if (mongoClient != null) {
         mongoClient.close();
-        mysqlConn = null;
+        mongoClient = null;
       }
     }
   }
